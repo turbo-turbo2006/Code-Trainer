@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeTrainer - Master Programming Languages</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <span class="logo-icon">💻</span>
+                    <h2>CodeTrainer</h2>
+                    <div class="level-badge">Level 1</div>
+                </div>
+            </div>
+            
+            <div class="user-stats">
+                <div class="stat-item">
+                    <span class="stat-value" id="total-xp">0</span>
+                    <span class="stat-label">XP</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value" id="current-streak">0</span>
+                    <span class="stat-label">Streak</span>
+                </div>
+            </div>
+            
+            <div class="nav-menu">
+                <a href="#" class="nav-item active" data-view="dashboard">
+                    <span class="nav-icon">📊</span>
+                    Dashboard
+                </a>
+                
+                <div class="nav-group">
+                    <div class="nav-group-title">Programming Languages</div>
+                    <a href="#" class="nav-item" data-view="python-lessons" data-language="python">
+                        <span class="nav-icon">🐍</span>
+                        Python
+                        <span class="lessons-counter">0/15</span>
+                    </a>
+                    <a href="#" class="nav-item" data-view="java-lessons" data-language="java">
+                        <span class="nav-icon">☕</span>
+                        Java
+                        <span class="lessons-counter">0/15</span>
+                    </a>
+                    <a href="#" class="nav-item" data-view="c-lessons" data-language="c">
+                        <span class="nav-icon">🔵</span>
+                        C Programming
+                        <span class="lessons-counter">0/15</span>
+                    </a>
+                    <a href="#" class="nav-item" data-view="cpp-lessons" data-language="cpp">
+                        <span class="nav-icon">➕</span>
+                        C++
+                        <span class="lessons-counter">0/15</span>
+                    </a>
+                </div>
+                
+                <div class="nav-group">
+                    <a href="#" class="nav-item" data-view="achievements">
+                        <span class="nav-icon">🏆</span>
+                        Achievements
+                    </a>
+                    <a href="#" class="nav-item" data-view="settings">
+                        <span class="nav-icon">⚙️</span>
+                        Settings
+                    </a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Dashboard View -->
+            <div id="dashboard-view" class="view active">
+                <div class="view-header">
+                    <h1>Welcome to CodeTrainer!</h1>
+                    <p class="view-subtitle">Start your programming journey from Level 1</p>
+                </div>
+
+                <div class="dashboard-stats">
+                    <div class="stat-card">
+                        <div class="stat-value" id="dashboard-xp">0</div>
+                        <div class="stat-label">Total XP</div>
+                        <div class="stat-icon">⭐</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="dashboard-streak">0</div>
+                        <div class="stat-label">Day Streak</div>
+                        <div class="stat-icon">🔥</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="dashboard-lessons">0</div>
+                        <div class="stat-label">Lessons Done</div>
+                        <div class="stat-icon">📚</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="dashboard-challenges">0</div>
+                        <div class="stat-label">Challenges</div>
+                        <div class="stat-icon">⚡</div>
+                    </div>
+                </div>
+
+                <div class="dashboard-content">
+                    <div class="content-section">
+                        <h2>Choose Your First Language</h2>
+                        <div class="progress-grid">
+                            <div class="progress-card" data-language="python">
+                                <div class="progress-header">
+                                    <span class="language-icon">🐍</span>
+                                    <h3>Python</h3>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" data-progress="0"></div>
+                                </div>
+                                <div class="progress-stats">
+                                    <span>0/15 lessons</span>
+                                    <span class="start-button">Start Level 1</span>
+                                </div>
+                                <div class="language-description">Perfect for beginners - clear syntax and powerful features</div>
+                            </div>
+
+                            <div class="progress-card" data-language="java">
+                                <div class="progress-header">
+                                    <span class="language-icon">☕</span>
+                                    <h3>Java</h3>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" data-progress="0"></div>
+                                </div>
+                                <div class="progress-stats">
+                                    <span>0/15 lessons</span>
+                                    <span class="start-button">Start Level 1</span>
+                                </div>
+                                <div class="language-description">Object-oriented programming and enterprise applications</div>
+                            </div>
+
+                            <div class="progress-card" data-language="c">
+                                <div class="progress-header">
+                                    <span class="language-icon">🔵</span>
+                                    <h3>C Programming</h3>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" data-progress="0"></div>
+                                </div>
+                                <div class="progress-stats">
+                                    <span>0/15 lessons</span>
+                                    <span class="start-button">Start Level 1</span>
+                                </div>
+                                <div class="language-description">Foundation of programming - learn how computers really work</div>
+                            </div>
+
+                            <div class="progress-card" data-language="cpp">
+                                <div class="progress-header">
+                                    <span class="language-icon">➕</span>
+                                    <h3>C++</h3>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" data-progress="0"></div>
+                                </div>
+                                <div class="progress-stats">
+                                    <span>0/15 lessons</span>
+                                    <span class="start-button">Start Level 1</span>
+                                </div>
+                                <div class="language-description">Powerful systems programming with object-oriented features</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content-section">
+                        <h2>Continue Learning</h2>
+                        <div class="continue-learning-card">
+                            <div class="continue-content">
+                                <h3>Ready to Start?</h3>
+                                <p>Choose a programming language above and begin your journey with Level 1 lessons designed for complete beginners.</p>
+                                <button class="btn btn--primary" id="continue-btn">Choose a Language</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Language Lessons Views -->
+            <div id="python-lessons-view" class="view">
+                <div class="view-header">
+                    <h1>🐍 Python Programming - Level 1</h1>
+                    <p class="view-subtitle">Learn Python from absolute beginner to confident programmer</p>
+                </div>
+                <div class="lessons-grid" data-language="python"></div>
+            </div>
+
+            <div id="java-lessons-view" class="view">
+                <div class="view-header">
+                    <h1>☕ Java Programming - Level 1</h1>
+                    <p class="view-subtitle">Master Java fundamentals and object-oriented programming</p>
+                </div>
+                <div class="lessons-grid" data-language="java"></div>
+            </div>
+
+            <div id="c-lessons-view" class="view">
+                <div class="view-header">
+                    <h1>🔵 C Programming - Level 1</h1>
+                    <p class="view-subtitle">Build a solid foundation in systems programming</p>
+                </div>
+                <div class="lessons-grid" data-language="c"></div>
+            </div>
+
+            <div id="cpp-lessons-view" class="view">
+                <div class="view-header">
+                    <h1>➕ C++ Programming - Level 1</h1>
+                    <p class="view-subtitle">Learn modern C++ from the ground up</p>
+                </div>
+                <div class="lessons-grid" data-language="cpp"></div>
+            </div>
+
+            <!-- Lesson Detail View -->
+            <div id="lesson-detail-view" class="view">
+                <div class="lesson-header">
+                    <button class="back-button btn btn--secondary">← Back to Lessons</button>
+                    <div class="lesson-info">
+                        <h1 id="lesson-title">Lesson Title</h1>
+                        <div class="lesson-meta">
+                            <span class="lesson-difficulty">Beginner</span>
+                            <span class="lesson-duration">30 min</span>
+                            <span class="lesson-xp">100 XP</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-content">
+                    <div class="lesson-sidebar">
+                        <div class="lesson-nav">
+                            <h3>Lesson Sections</h3>
+                            <ul class="section-list">
+                                <li><a href="#theory" class="section-link active">📖 Theory</a></li>
+                                <li><a href="#examples" class="section-link">💡 Examples</a></li>
+                                <li><a href="#exercise" class="section-link">✏️ Exercise</a></li>
+                                <li><a href="#challenge" class="section-link">🎯 Challenge</a></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="lesson-objectives">
+                            <h3>Learning Objectives</h3>
+                            <ul id="lesson-objectives-list">
+                                <li>Objective 1</li>
+                                <li>Objective 2</li>
+                                <li>Objective 3</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="lesson-main">
+                        <!-- Theory Section -->
+                        <div id="theory-section" class="content-section active">
+                            <h2>📖 Theory</h2>
+                            <div id="theory-content" class="theory-content"></div>
+                            <div class="section-actions">
+                                <button class="btn btn--primary" onclick="showSection('examples')">Continue to Examples →</button>
+                            </div>
+                        </div>
+
+                        <!-- Examples Section -->
+                        <div id="examples-section" class="content-section">
+                            <h2>💡 Interactive Examples</h2>
+                            <div id="examples-container"></div>
+                            <div class="section-actions">
+                                <button class="btn btn--secondary" onclick="showSection('theory')">← Back to Theory</button>
+                                <button class="btn btn--primary" onclick="showSection('exercise')">Try the Exercise →</button>
+                            </div>
+                        </div>
+
+                        <!-- Exercise Section -->
+                        <div id="exercise-section" class="content-section">
+                            <h2>✏️ Practice Exercise</h2>
+                            <div id="exercise-container">
+                                <div class="exercise-description">
+                                    <h3 id="exercise-title">Exercise Title</h3>
+                                    <p id="exercise-desc">Exercise description</p>
+                                    <div class="exercise-hints">
+                                        <button class="btn btn--outline hint-button">💡 Show Hint</button>
+                                        <div class="hints-content hidden" id="exercise-hints"></div>
+                                    </div>
+                                </div>
+                                <div class="code-editor-container">
+                                    <div class="editor-header">
+                                        <span class="editor-title">Code Editor</span>
+                                        <button class="btn btn--primary run-code-btn">▶ Run Code</button>
+                                    </div>
+                                    <textarea id="exercise-editor" class="code-editor" placeholder="# Write your code here..."></textarea>
+                                    <div class="code-output">
+                                        <h4>Output:</h4>
+                                        <pre id="exercise-output">Your output will appear here...</pre>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="section-actions">
+                                <button class="btn btn--secondary" onclick="showSection('examples')">← Back to Examples</button>
+                                <button class="btn btn--primary" onclick="showSection('challenge')">Take the Challenge →</button>
+                            </div>
+                        </div>
+
+                        <!-- Challenge Section -->
+                        <div id="challenge-section" class="content-section">
+                            <h2>🎯 Coding Challenge</h2>
+                            <div id="challenge-container">
+                                <div class="challenge-description">
+                                    <h3 id="challenge-title">Challenge Title</h3>
+                                    <p id="challenge-desc">Challenge description</p>
+                                    <div id="challenge-instructions"></div>
+                                </div>
+                                <div class="code-editor-container">
+                                    <div class="editor-header">
+                                        <span class="editor-title">Challenge Editor</span>
+                                        <button class="btn btn--primary run-challenge-btn">▶ Run Code</button>
+                                        <button class="btn btn--outline show-solution-btn">💡 Show Solution</button>
+                                    </div>
+                                    <textarea id="challenge-editor" class="code-editor"></textarea>
+                                    <div class="code-output">
+                                        <h4>Expected Output:</h4>
+                                        <pre id="challenge-expected-output"></pre>
+                                        <h4>Your Output:</h4>
+                                        <pre id="challenge-actual-output">Run your code to see the output...</pre>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="section-actions">
+                                <button class="btn btn--secondary" onclick="showSection('exercise')">← Back to Exercise</button>
+                                <button class="btn btn--primary complete-lesson-btn">Complete Lesson (+ XP) →</button>
+                            </div>
+                        </div>
+
+                        <!-- Key Takeaways -->
+                        <div class="key-takeaways">
+                            <h3>🔑 Key Takeaways</h3>
+                            <ul id="key-takeaways-list"></ul>
+                        </div>
+
+                        <div class="lesson-actions">
+                            <button class="btn btn--secondary prev-lesson-btn">← Previous Lesson</button>
+                            <button class="btn btn--primary next-lesson-btn">Next Lesson →</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Achievements View -->
+            <div id="achievements-view" class="view">
+                <div class="view-header">
+                    <h1>🏆 Achievements</h1>
+                    <p class="view-subtitle">Track your programming milestones</p>
+                </div>
+                <div class="achievements-grid"></div>
+            </div>
+
+            <!-- Settings View -->
+            <div id="settings-view" class="view">
+                <div class="view-header">
+                    <h1>⚙️ Settings</h1>
+                    <p class="view-subtitle">Customize your learning experience</p>
+                </div>
+                <div class="settings-content">
+                    <div class="settings-group">
+                        <h3>Display Preferences</h3>
+                        <div class="form-group">
+                            <label class="form-label">Theme</label>
+                            <select class="form-control" id="theme-select">
+                                <option value="light">Light</option>
+                                <option value="dark" selected>Dark</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Font Size</label>
+                            <select class="form-control" id="font-size-select">
+                                <option value="12">Small (12px)</option>
+                                <option value="14" selected>Medium (14px)</option>
+                                <option value="16">Large (16px)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="settings-group">
+                        <h3>Learning Preferences</h3>
+                        <div class="form-group">
+                            <label class="form-label">
+                                <input type="checkbox" id="auto-save" checked> Auto-save progress
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">
+                                <input type="checkbox" id="show-hints" checked> Show hints by default
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">
+                                <input type="checkbox" id="playground-mode" checked> Enable playground mode
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="settings-group">
+                        <h3>Reset Progress</h3>
+                        <p>Warning: This will reset all your progress and cannot be undone.</p>
+                        <button class="btn btn--outline" id="reset-progress-btn">Reset All Progress</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
